@@ -40,7 +40,7 @@ if (allowMotion && 'IntersectionObserver' in window) {
 async function loadLatestProjects() {
   const container = document.getElementById('latest-projects');
   try {
-    const response = await fetch('https://api.github.com/users/pogiko1345/repos?per_page=100&sort=updated', { headers: { Accept: 'application/vnd.github+json' } });
+    const response = await fetch('https://api.github.com/users/RafaelYap/repos?per_page=100&sort=updated', { headers: { Accept: 'application/vnd.github+json' } });
     if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
     const repositories = (await response.json()).filter(repo => !repo.fork && !repo.archived && repo.name !== 'About-Me').slice(0, 3);
     if (!repositories.length) throw new Error('No repositories found');

@@ -10,7 +10,7 @@ public class AboutMe {
     private static final Color TEXT = new Color(246, 247, 251);
     private static final Color MUTED = new Color(170, 184, 202);
     private static final Color ACCENT = new Color(169, 240, 205);
-    private static final String GITHUB = "https://github.com/pogiko1345";
+    private static final String GITHUB = "https://github.com/RafaelYap";
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AboutMe::show);

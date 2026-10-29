@@ -6,7 +6,7 @@ The website shows Rafael's age, calculated from his birth date when the page loa
 
 ## Deploy the website on Vercel
 
-Import the GitHub repository `pogiko1345/About-Me` into Vercel. Choose **Other** as the framework preset, leave the build command blank, and use the repository root as the output directory. Vercel serves `index.html` at the site URL.
+Import the GitHub repository `RafaelYap/About-Me` into Vercel. Choose **Other** as the framework preset, leave the build command blank, and use the repository root as the output directory. Vercel serves `index.html` at the site URL.
 
 ## Run the desktop app
 
