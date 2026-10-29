@@ -52,6 +52,8 @@ public class AboutMe {
         gap(content, 36);
         content.add(label("LET'S CONNECT", 24, TEXT, Font.BOLD));
         gap(content, 12);
+        content.add(link("Email: rafaelseanyap123@gmail.com", "mailto:rafaelseanyap123@gmail.com"));
+        gap(content, 12);
         content.add(link("Visit my GitHub profile", GITHUB));
         gap(content, 32);
         content.add(label("© 2026 Rafael Yap", 12, MUTED, Font.PLAIN));
