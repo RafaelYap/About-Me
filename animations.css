@@ -1,0 +1,14 @@
+/* Motion is added only after JavaScript is ready, so content remains visible without it. */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready .hero > div { animation: rise-in .7s both; }
+  .motion-ready .profile-card { animation: rise-in .8s .14s both; }
+  .motion-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); }
+  .motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .motion-ready .project:nth-child(2), .motion-ready .latest-card:nth-child(2) { transition-delay: .08s; }
+  .motion-ready .project:nth-child(3), .motion-ready .latest-card:nth-child(3) { transition-delay: .16s; }
+  .project, .latest-card, .profile-card { transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+  .project:hover, .latest-card:hover { border-color: #5a8a80; box-shadow: 0 12px 30px #0003; }
+  .project.is-visible:hover, .latest-card.is-visible:hover { transform: translateY(-5px); }
+  .nav-links a { transition: color .2s ease; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+}

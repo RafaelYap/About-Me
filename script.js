@@ -21,6 +21,22 @@ function updateAge(dateString) {
 updateAge(birthDate);
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const allowMotion = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+let revealObserver;
+if (allowMotion && 'IntersectionObserver' in window) {
+  const revealItems = document.querySelectorAll('.two-column > *, .section-heading, .section-intro, .project, .contact');
+  revealItems.forEach(item => item.classList.add('reveal'));
+  document.body.classList.add('motion-ready');
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px 40px 0px' });
+  revealItems.forEach(item => revealObserver.observe(item));
+}
+
 async function loadLatestProjects() {
   const container = document.getElementById('latest-projects');
   try {
@@ -30,7 +46,7 @@ async function loadLatestProjects() {
     if (!repositories.length) throw new Error('No repositories found');
     container.replaceChildren(...repositories.map(repo => {
       const card = document.createElement('article');
-      card.className = 'latest-card';
+      card.className = revealObserver ? 'latest-card reveal' : 'latest-card';
       const heading = document.createElement('h3');
       heading.textContent = repo.name.replace(/[-_]/g, ' ');
       const description = document.createElement('p');
@@ -45,6 +61,7 @@ async function loadLatestProjects() {
       card.append(heading, description, link, updated);
       return card;
     }));
+    if (revealObserver) container.querySelectorAll('.latest-card').forEach(card => revealObserver.observe(card));
   } catch {
     container.replaceChildren();
     const fallback = document.createElement('p');
