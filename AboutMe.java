@@ -1,5 +1,7 @@
 import java.awt.*;
 import java.net.URI;
+import java.time.LocalDate;
+import java.time.Period;
 import javax.swing.*;
 
 public class AboutMe {
@@ -28,6 +30,8 @@ public class AboutMe {
         gap(content, 38);
         content.add(label("Hi, I'm Rafael.", 42, TEXT, Font.BOLD));
         gap(content, 12);
+        content.add(label(Period.between(LocalDate.of(2003, 5, 29), LocalDate.now()).getYears() + " years old", 16, ACCENT, Font.BOLD));
+        gap(content, 12);
         content.add(paragraph("I build useful software across web and mobile. My recent public work includes a student information system and a campus access platform.", BG, 18));
         gap(content, 20);
         content.add(link("Explore my GitHub", GITHUB));
@@ -44,7 +48,7 @@ public class AboutMe {
 
         content.add(label("ABOUT ME", 14, ACCENT, Font.BOLD));
         gap(content, 14);
-        content.add(paragraph("I enjoy turning complex workflows into software people can use. My public projects span full stack web development and cross platform apps. I like learning by building and sharing the results.", BG, 16));
+        content.add(paragraph("I enjoy building practical software and learning how its parts connect. My projects focus on web and mobile apps, authentication, and data. I also want to keep learning across IT, including networking, cybersecurity, and technical support.", BG, 16));
         gap(content, 36);
         content.add(label("LET'S CONNECT", 24, TEXT, Font.BOLD));
         gap(content, 12);
