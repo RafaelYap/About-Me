@@ -1,8 +1,12 @@
 # Rafael Yap — About Me
 
-A Java desktop portfolio built with Swing. It highlights selected projects and opens their links in your default browser.
+A portfolio available as a website and a Java Swing desktop app. Both highlight selected projects and link to their repositories.
 
-## Run
+## Deploy the website on Vercel
+
+Import the GitHub repository `pogiko1345/About-Me` into Vercel. Choose **Other** as the framework preset, leave the build command blank, and use the repository root as the output directory. Vercel serves `index.html` at the site URL.
+
+## Run the desktop app
 
 Install Java 17 or newer, then run from this folder:
 
@@ -11,4 +15,4 @@ javac AboutMe.java
 java AboutMe
 ```
 
-This desktop app requires a graphical environment. It does not run as a static Vercel website.
+The desktop app requires a graphical environment. Vercel displays the website in `index.html` instead.
